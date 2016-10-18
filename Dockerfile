@@ -2,7 +2,7 @@ FROM microsoft/dotnet:onbuild
 MAINTAINER Kwoth <nadekodiscordbot@gmail.com>
 
 # Install Pre-Requisites
-RUN add-apt-repository ppa:mc3man/trusty-media -y
+RUN echo "deb http://ftp.debian.org/debian jessie-backports main" | tee /etc/apt/sources.list.d/debian-backports.list
 RUN apt-get -q update && \
 apt-get install -qy libopus0 opus-tools libopus-dev unzip ffmpeg rsync nano ca-certificates curl git wget unzip
 
