@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:sdk
+FROM microsoft/dotnet:1.0.0-preview2-sdk
 MAINTAINER Kwoth <nadekodiscordbot@gmail.com>
 
 # Install Pre-Requisites
