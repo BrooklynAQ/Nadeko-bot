@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:onbuild
+FROM microsoft/dotnet:sdk
 MAINTAINER Kwoth <nadekodiscordbot@gmail.com>
 
 # Install Pre-Requisites
