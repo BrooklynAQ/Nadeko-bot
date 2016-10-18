@@ -1,13 +1,12 @@
 #!/bin/sh
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
-installPath=/root/NadekoBot
 ##Install NadekoBot
 #Cleanup Existing
-rm -rf $installPath
+rm -rf /root/NadekoBot
 
 #Get NadekoBot Version
-git clone --branch=1.0 https://github.com/Kwoth/NadekoBot.git $installPath
-cd $installPath
+git clone --branch=1.0 https://github.com/Kwoth/NadekoBot.git /root/NadekoBot
+cd /root/NadekoBot
 echo Checking Out
 git checkout -qf 0df0eea6c0e1c451f0ebf4dffbb50a3ecd99eda5
 git submodule update --init
@@ -16,11 +15,11 @@ dotnet restore
 
 #Build NadekoBot
 echo Building
-cd $installPath/src/NadekoBot
+cd /root/NadekoBot/src/NadekoBot
 dotnet build
 
 #Move Data to user area
-rsync --ignore-existing -r $installPath/src/NadekoBot/data /config
+rsync --ignore-existing -r /root/NadekoBot/src/NadekoBot/data /config
 
 #Remove data folder
-rm -rf $installPath/src/NadekoBot/data
+rm -rf /root/NadekoBot/src/NadekoBot/data
