@@ -9,4 +9,4 @@ function handle_signal {
 trap "handle_signal" SIGINT SIGTERM SIGHUP
 
 cd /root/NadekoBot/src/NadekoBot
-dotnet run
+dotnet run --configuration Release
