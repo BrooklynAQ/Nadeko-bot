@@ -1,4 +1,4 @@
-FROM microsoft/1.0.0-preview2-onbuild
+FROM microsoft/dotnet:onbuild
 MAINTAINER Kwoth <nadekodiscordbot@gmail.com>
 
 # Install Pre-Requisites
