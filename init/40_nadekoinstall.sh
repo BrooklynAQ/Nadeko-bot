@@ -1,6 +1,6 @@
 #!/bin/sh
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
-installPath=/dotnetapp
+installPath=/root/NadekoBot
 ##Install NadekoBot
 #Cleanup Existing
 rm -rf $installPath
@@ -16,11 +16,11 @@ dotnet restore
 
 #Build NadekoBot
 echo Building
-cd /root/NadekoBot/src/NadekoBot
+cd $installPath/src/NadekoBot
 dotnet build
 
 #Move Data to user area
 rsync --ignore-existing -r $installPath/src/NadekoBot/data /config
 
 #Remove data folder
-rm -rf /root/NadekoBot/src/NadekoBot/data
+rm -rf $installPath/src/NadekoBot/data
